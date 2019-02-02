@@ -1,0 +1,7 @@
+micronaut:
+    application:
+        name: example
+
+
+    server:
+        port: 9001

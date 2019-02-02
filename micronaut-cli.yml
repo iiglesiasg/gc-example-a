@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: everis.conocimiento
+---
+testFramework: junit
+sourceLanguage: java
