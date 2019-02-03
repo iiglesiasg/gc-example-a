@@ -1,11 +1,11 @@
 ./gradlew assemble
-java -cp build/libs/example-0.1-all.jar io.micronaut.graal.reflect.GraalClassLoadingAnalyzer
+java -cp build/libs/gc-example-a-0.1-all.jar io.micronaut.graal.reflect.GraalClassLoadingAnalyzer
 native-image --no-server \
-             --class-path build/libs/example-0.1-all.jar \
+             --class-path build/libs/gc-example-a-0.1-all.jar \
              -H:ReflectionConfigurationFiles=build/reflect.json \
              -H:EnableURLProtocols=http \
              -H:IncludeResources="logback.xml|application.yml|META-INF/services/*.*" \
-             -H:Name=example \
+             -H:Name=gc-example-a \
              -H:Class=everis.conocimiento.Application \
              -H:+ReportUnsupportedElementsAtRuntime \
              -H:+AllowVMInspection \
