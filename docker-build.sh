@@ -1,3 +1,3 @@
 ./gradlew assemble
-docker build . -t example
-docker run --network host example
+docker build . -t gc-example-a
+docker run --network host gc-example-a
