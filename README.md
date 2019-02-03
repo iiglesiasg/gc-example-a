@@ -1,5 +1,5 @@
 # gc-example-a
-graal example a
+graal gc-example-a a
 
 # gradlew run
 Esto ejecuta en local
