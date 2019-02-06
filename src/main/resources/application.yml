@@ -3,5 +3,5 @@ micronaut:
         name: gc-example-a
 
 
-    server:
-        port: 9001
+ #   server:
+ #       port: 9001
