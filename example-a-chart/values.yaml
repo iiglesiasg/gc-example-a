@@ -5,12 +5,12 @@
 replicaCount: 1
 
 image:
-  repository: nginx
-  tag: stable
+  repository: gcr.io/gke-inigo-1-229519/gc-example-a
+  tag: v1
   pullPolicy: IfNotPresent
 
-nameOverride: ""
-fullnameOverride: ""
+nameOverride: "gc-example-a"
+fullnameOverride: "gc-example-a"
 
 service:
   type: ClusterIP
@@ -21,9 +21,9 @@ ingress:
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  paths: []
+  paths: [/colors]
   hosts:
-    - chart-example.local
+    - gc-example-a.local
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
