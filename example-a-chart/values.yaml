@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: gcr.io/gke-inigo-1-229519/gc-example-a
-  tag: v1
+  tag: 1.0.0
   pullPolicy: IfNotPresent
 
 nameOverride: "gc-example-a"
