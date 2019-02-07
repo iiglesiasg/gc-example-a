@@ -1,0 +1,30 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.istio.io/v1alpha3","kind":"VirtualService","metadata":{"annotations":{},"name":"httpbin","namespace":"default"},"spec":{"gateways":["httpbin-gateway"],"hosts":["httpbin.example.com"],"http":[{"match":[{"uri":{"prefix":"/status"}},{"uri":{"prefix":"/delay"}}],"route":[{"destination":{"host":"httpbin","port":{"number":8000}}}]}]}}
+  clusterName: ""
+  creationTimestamp: 2019-02-07T19:59:10Z
+  generation: 1
+  name: httpbin
+  namespace: default
+  resourceVersion: "2855705"
+  selfLink: /apis/networking.istio.io/v1alpha3/namespaces/default/virtualservices/httpbin
+  uid: d58dc984-2b12-11e9-b70a-42010a8002be
+spec:
+  gateways:
+  - httpbin-gateway
+  hosts:
+  - httpbin.example.com
+  http:
+  - match:
+    - uri:
+        prefix: /status
+    - uri:
+        prefix: /delay
+    route:
+    - destination:
+        host: httpbin
+        port:
+          number: 8000

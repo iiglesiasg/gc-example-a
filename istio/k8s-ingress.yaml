@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gc-example-a
+  namespace: grupo-conocimiento
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /colors
+        backend:
+          serviceName: gc-example-a
+          servicePort: 8080

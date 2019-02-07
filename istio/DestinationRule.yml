@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  clusterName: ""
+  creationTimestamp: 2019-02-06T23:29:49Z
+  generation: 1
+  name: gc-example-a
+  namespace: grupo-conocimiento
+  resourceVersion: "2845455"
+  selfLink: /apis/networking.istio.io/v1alpha3/namespaces/grupo-conocimiento/destinationrules/gc-example-a
+  uid: 189e498f-2a67-11e9-b70a-42010a8002be
+spec:
+  host: gc-example-a.grupo-conocimiento.svc.cluster.local
+  trafficPolicy:
+    loadBalancer:
+      simple: RANDOM

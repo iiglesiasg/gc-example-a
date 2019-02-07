@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  clusterName: ""
+  creationTimestamp: 2019-02-06T23:58:27Z
+  generation: 1
+  name: gc-example-a
+  namespace: grupo-conocimiento
+  resourceVersion: "2855550"
+  selfLink: /apis/networking.istio.io/v1alpha3/namespaces/grupo-conocimiento/gateways/gc-example-a
+  uid: 18a7edea-2a6b-11e9-b70a-42010a8002be
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - hosts:
+    - gc-example-a.grupo-conocimiento.svc.cluster.local
+    port:
+      name: http
+      number: 80
+      protocol: HTTP
