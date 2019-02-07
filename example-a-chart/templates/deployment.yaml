@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "example-a-chart.fullname" . }}
+  namespace: grupo-conocimiento
   labels:
     app.kubernetes.io/name: {{ include "example-a-chart.name" . }}
     helm.sh/chart: {{ include "example-a-chart.chart" . }}
@@ -27,14 +28,6 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
