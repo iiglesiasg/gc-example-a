@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"gc-example-a"},"name":"gc-example-a","namespace":"grupo-conocimiento"},"spec":{"ports":[{"name":"http","port":8000,"targetPort":8080}],"selector":{"app":"gc-example-a"}}}
+  creationTimestamp: 2019-02-07T21:16:55Z
+  labels:
+    app: gc-example-a
+  name: gc-example-a
+  namespace: grupo-conocimiento
+  resourceVersion: "2866054"
+  selfLink: /api/v1/namespaces/grupo-conocimiento/services/gc-example-a
+  uid: b24dd9db-2b1d-11e9-b70a-42010a8002be
+spec:
+  clusterIP: 10.11.254.177
+  ports:
+  - name: http
+    port: 8000
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: gc-example-a
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

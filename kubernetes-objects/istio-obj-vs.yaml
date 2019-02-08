@@ -1,0 +1,31 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.istio.io/v1alpha3","kind":"VirtualService","metadata":{"annotations":{},"name":"gc-example-a","namespace":"grupo-conocimiento"},"spec":{"gateways":["gc-example-a-gateway"],"hosts":["gc-example-a.grupo-conocimiento.svc.cluster.local"],"http":[{"match":[{"uri":{"prefix":"/colors"}}],"route":[{"destination":{"host":"gc-example-a","port":{"number":8000}}}]}]}}
+  clusterName: ""
+  creationTimestamp: 2019-02-07T21:23:39Z
+  generation: 1
+  name: gc-example-a
+  namespace: grupo-conocimiento
+  resourceVersion: "2904688"
+  selfLink: /apis/networking.istio.io/v1alpha3/namespaces/grupo-conocimiento/virtualservices/gc-example-a
+  uid: a2ea2807-2b1e-11e9-b70a-42010a8002be
+spec:
+  gateways:
+  - gc-example-a-gateway
+  hosts:
+  - '*'
+  http:
+  - corsPolicy:
+      allowMethods:
+      - GET
+    match:
+    - uri:
+        prefix: /colors
+    route:
+    - destination:
+        host: gc-example-a
+        port:
+          number: 8000
