@@ -1,7 +1,10 @@
 micronaut:
     application:
         name: gc-example-a
-
-
  #   server:
  #       port: 9001
+
+endpoints:
+    health:
+        enabled: true
+    
