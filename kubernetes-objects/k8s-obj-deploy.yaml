@@ -9,8 +9,8 @@ metadata:
   generation: 1
   labels:
     app: gc-example-a
-    version: v1
-  name: gc-example-a
+    version: v2
+  name: gc-example-a-v2
   namespace: grupo-conocimiento
   resourceVersion: "2908194"
   selfLink: /apis/extensions/v1beta1/namespaces/grupo-conocimiento/deployments/gc-example-a
@@ -36,7 +36,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: gcr.io/gke-inigo-1-229519/gc-example-a:1.0.0
+      - image: gcr.io/gke-inigo-1-229519/gc-example-a:2.0.0
         imagePullPolicy: IfNotPresent
         name: gc-example-a
         ports:
