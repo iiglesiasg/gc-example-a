@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: gc-example-a-mesh
+  namespace: grupo-conocimiento
+spec:
+  hosts:
+  - gc-example-a
+  http:
+  - corsPolicy:
+      allowMethods:
+      - GET
+    match:
+    - uri:
+        prefix: /colors
+    route:
+    - destination:
+        host: gc-example-a
+        port:
+          number: 8000
