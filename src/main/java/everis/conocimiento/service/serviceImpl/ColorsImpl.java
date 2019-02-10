@@ -10,7 +10,7 @@ import javax.inject.Singleton;
 public class ColorsImpl {
 
     public Flowable<Color> getColors() {
-        return Flowable.just(new Color("Green","Grass is green"),
-                             new Color("Blue","Blue is the ocean"));
+        return Flowable.just(new Color("Orange","Orange is the new black"),
+                             new Color("Purple","Purple rain, purple rain"));
     }
 }
