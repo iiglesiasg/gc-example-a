@@ -1,6 +1,6 @@
 # gc-example-a
 
-# PRERUQUISITOS
+# PREREQUISITOS
 - Gradle: Para compilar el java -> https://gradle.org/install/
 - Docker: Para generar la imagen
 - Cluster de Kubernetes. Se sugiere GKE
