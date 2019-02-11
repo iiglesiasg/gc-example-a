@@ -1,4 +1,4 @@
-# gc-example-b
+# gc-example-a
 
 # PRERUQUISITOS
 - Gradle: Para compilar el java -> https://gradle.org/install/
@@ -18,9 +18,9 @@
 - Contruir la imagen
   - $ docker build -f DockerfileAllInOne .
 - Tagearla
-  - $ docker tag 7cb9550650b3 gcr.io/${GKE_PROJECT_ID}/gc-example-b:2.0.0 
+  - $ docker tag 7cb9550650b3 gcr.io/${GKE_PROJECT_ID}/gc-example-a:2.0.0 
 - Subirla al registry
-  - $ docker push gcr.io/${GKE_PROJECT_ID}/gc-example-b:2.0.0 
+  - $ docker push gcr.io/${GKE_PROJECT_ID}/gc-example-a:2.0.0 
 
 ## GENERAR LOS OBJETOS DE KUBERNETES
 Hay dos aproximaciones a manita con kubectl apply o con Helm
