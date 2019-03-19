@@ -1,7 +1,7 @@
 package everis.conocimiento.service.serviceImpl;
 
-import everis.conocimiento.model.Color;
-import io.reactivex.Flowable;
+import everis.conocimiento.model.SaludosTerricolas;
+import io.reactivex.Single;
 
 import javax.inject.Singleton;
 
@@ -9,8 +9,7 @@ import javax.inject.Singleton;
 @Singleton
 public class ColorsImpl {
 
-    public Flowable<Color> getColors() {
-        return Flowable.just(new Color("Green","Grass is green"),
-                             new Color("Blue","Blue is the ocean"));
+    public Single<SaludosTerricolas> getColors() {
+        return Single.just(new SaludosTerricolas("Mensaje recibido desde un Android"));
     }
 }
