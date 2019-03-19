@@ -10,6 +10,6 @@ import javax.inject.Singleton;
 public class ColorsImpl {
 
     public Single<SaludosTerricolas> getColors() {
-        return Single.just(new SaludosTerricolas("Mensaje recibido desde un Android"));
+        return Single.just(new SaludosTerricolas("Mensaje recibido desde un Iphone"));
     }
 }

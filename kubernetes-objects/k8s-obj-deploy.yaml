@@ -3,25 +3,20 @@ kind: Deployment
 metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"extensions/v1beta1","kind":"Deployment","metadata":{"annotations":{},"name":"gc-example-a","namespace":"grupo-conocimiento"},"spec":{"replicas":1,"template":{"metadata":{"labels":{"app":"gc-example-a","version":"v1"}},"spec":{"containers":[{"image":"gcr.io/gke-inigo-1-229519/gc-example-a:1.0.0","imagePullPolicy":"IfNotPresent","name":"gc-example-a","ports":[{"containerPort":8080}]}]}}}}
-  creationTimestamp: 2019-02-07T21:16:56Z
   generation: 1
   labels:
-    app: gc-example-a
+    app: grupo-paas
     version: v1
-  name: gc-example-a
+    device: iphone
+  name: grupo-paas-iphone
   namespace: grupo-conocimiento
-  resourceVersion: "2908194"
-  selfLink: /apis/extensions/v1beta1/namespaces/grupo-conocimiento/deployments/gc-example-a
-  uid: b2a92eb9-2b1d-11e9-b70a-42010a8002be
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: gc-example-a
+      app: grupo-paas
       version: v1
   strategy:
     rollingUpdate:
@@ -32,13 +27,14 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: gc-example-a
+        app: grupo-paas
         version: v1
+        device: iphone
     spec:
       containers:
-      - image: gcr.io/gke-inigo-1-229519/gc-example-a:1.0.0
+      - image: gcr.io/gke-inigo-1-229519/grupo-paas:iphone
         imagePullPolicy: IfNotPresent
-        name: gc-example-a
+        name: grupo-paas
         ports:
         - containerPort: 8080
           protocol: TCP
@@ -48,24 +44,3 @@ spec:
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
-status:
-  availableReplicas: 1
-  conditions:
-  - lastTransitionTime: 2019-02-07T21:16:56Z
-    lastUpdateTime: 2019-02-07T21:16:56Z
-    message: Deployment has minimum availability.
-    reason: MinimumReplicasAvailable
-    status: "True"
-    type: Available
-  - lastTransitionTime: 2019-02-07T21:16:56Z
-    lastUpdateTime: 2019-02-07T21:17:00Z
-    message: ReplicaSet "gc-example-a-79cfcd89f4" has successfully progressed.
-    reason: NewReplicaSetAvailable
-    status: "True"
-    type: Progressing
-  observedGeneration: 1
-  readyReplicas: 1
-  replicas: 1
-  updatedReplicas: 1
