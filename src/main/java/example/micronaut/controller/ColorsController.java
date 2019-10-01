@@ -1,7 +1,7 @@
-package everis.conocimiento.controller;
+package example.micronaut.controller;
 
-import everis.conocimiento.model.Color;
-import everis.conocimiento.service.serviceImpl.ColorsImpl;
+import example.micronaut.model.Color;
+import example.micronaut.service.ColorsImpl;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
@@ -11,15 +11,15 @@ import io.reactivex.Flowable;
 @Controller("/colors")
 public class ColorsController {
 
-    private final ColorsImpl service;
+    private final ColorsImpl servicio;
 
-    public ColorsController(ColorsImpl service) {
-        this.service = service;
+    public ColorsController(ColorsImpl servicio) {
+        this.servicio = servicio;
     }
 
     @Get("/")
     @Produces(MediaType.APPLICATION_JSON_STREAM)
     public Flowable<Color> getColors(){
-        return service.getColors();
+        return servicio.getColors();
     }
 }

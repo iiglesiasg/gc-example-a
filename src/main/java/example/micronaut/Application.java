@@ -1,4 +1,4 @@
-package everis.conocimiento;
+package example.micronaut;
 
 import io.micronaut.runtime.Micronaut;
 

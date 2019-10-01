@@ -1,3 +1,6 @@
-./gradlew assemble
-docker build . -t gc-example-a
-docker run --network host gc-example-a
+#!/bin/sh
+docker build . --tag complete
+echo
+echo
+echo "To run the docker container execute:"
+echo "    $ docker run -p 8080:8080 complete"
