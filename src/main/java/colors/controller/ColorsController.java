@@ -1,7 +1,7 @@
-package example.micronaut.controller;
+package colors.controller;
 
-import example.micronaut.model.Color;
-import example.micronaut.service.ColorsImpl;
+import colors.model.Color;
+import colors.service.ColorsImpl;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;

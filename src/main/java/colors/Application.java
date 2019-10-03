@@ -1,4 +1,4 @@
-package example.micronaut;
+package colors;
 
 import io.micronaut.runtime.Micronaut;
 

@@ -1,4 +1,4 @@
-package example.micronaut.model;
+package colors.model;
 
 import io.micronaut.core.annotation.Introspected;
 

@@ -1,10 +1,4 @@
-FROM oracle/graalvm-ce:19.0.0 as graalvm
-COPY . /home/app/complete
-WORKDIR /home/app/complete
-RUN gu install native-image
-RUN native-image --no-server -cp build/libs/complete-*-all.jar
-
-FROM frolvlad/alpine-glibc
+FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.1.13-alpine-slim
+COPY target/colors-*.jar colors.jar
 EXPOSE 8080
-COPY --from=graalvm /home/app/complete .
-ENTRYPOINT ["./complete"]
+CMD java -Dcom.sun.management.jmxremote -noverify ${JAVA_OPTS} -jar colors.jar
