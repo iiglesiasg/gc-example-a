@@ -1,15 +1,55 @@
-<configuration>
+<?xml version="1.0" encoding="UTF-8"?>
 
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <withJansi>false</withJansi>
-        <!-- encoders are assigned the type
-             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
-        <encoder>
-            <pattern>%cyan(%d{HH:mm:ss.SSS}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg%n</pattern>
+<configuration scan="true">
+
+
+    <appender name="STASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <!--<destination>logstash-helm:9600</destination>-->
+        <destination>localhost:5000</destination>
+
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+
+            <providers>
+                <timestamp/>
+                <mdc/> <!-- MDC variables on the Thread will be written as JSON fields -->
+                <context/> <!--Outputs entries from logback's context -->
+                <version/> <!-- Logstash json format version, the @version field in the output -->
+                <logLevel/>
+                <loggerName/>
+
+                <pattern>
+                    <!-- we can add some custom fields to be sent with all the log entries. -->
+                    <!--make filtering easier in Logstash -->
+                    <!--or searching with Kibana -->
+                    <pattern>
+                        {
+                        "service-name": "colors",
+                        "service-version": "1.0.0"
+                        }
+                    </pattern>
+                </pattern>
+
+                <threadName/>
+                <message/>
+
+                <logstashMarkers/> <!-- Useful so we can add extra information for specific log lines as Markers -->
+                <arguments/> <!--or through StructuredArguments -->
+
+                <stackTrace/>
+            </providers>
         </encoder>
     </appender>
 
-    <root level="info">
-        <appender-ref ref="STDOUT" />
+    <appender name="ASYNC" class="reactor.logback.AsyncAppender">
+        <appender-ref ref="STASH"/>
+    </appender>
+
+    <root level="#logback.loglevel#">
+        <appender-ref ref="ASYNC"/>
     </root>
+
+    <logger name="io.micronaut.http.client" level="DEBUG"/>
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
 </configuration>

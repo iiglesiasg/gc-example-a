@@ -20,6 +20,7 @@ public class ColorsController {
     @Get("/")
     @Produces(MediaType.APPLICATION_JSON_STREAM)
     public Flowable<Color> getColors(){
+
         return servicio.getColors();
     }
 }
