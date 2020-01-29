@@ -1,0 +1,7 @@
+micronaut:
+  application:
+    name: simple-log
+
+endpoints:
+  health:
+    enabled: true
