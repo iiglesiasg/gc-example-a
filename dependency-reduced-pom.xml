@@ -72,6 +72,11 @@
                 <artifactId>micronaut-validation</artifactId>
                 <version>${micronaut.version}</version>
               </path>
+              <path>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.8</version>
+              </path>
             </annotationProcessorPaths>
           </configuration>
         </plugin>
@@ -171,6 +176,18 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.7.28</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>log4j</artifactId>
+          <groupId>log4j</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
   </dependencies>
   <dependencyManagement>
     <dependencies>
@@ -184,15 +201,15 @@
     </dependencies>
   </dependencyManagement>
   <properties>
-    <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
     <micronaut.version>1.2.2</micronaut.version>
-    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     <maven.compiler.target>${jdk.version}</maven.compiler.target>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <exec.mainClass>colors.Application</exec.mainClass>
-    <jdk.version>1.8</jdk.version>
+    <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
+    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     <maven.compiler.source>${jdk.version}</maven.compiler.source>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jdk.version>1.8</jdk.version>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 </project>
 
